@@ -3,7 +3,7 @@ var _timer;
 var myWin;
 
 
-var urlList = document.getElementsByTagName("A");
+urlList = document.getElementsByTagName("A");
 for (var i=0; i<urlList.length; i++){
     urlList[i].onmouseover=openPreview;
     urlList[i].onmouseout=closePreview;
@@ -27,4 +27,5 @@ function openPreview() {
 
 function closePreview(){
     myWin.close();
+    clearTimeout(_timer);
 }
