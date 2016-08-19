@@ -49,7 +49,7 @@ function showButton() {
 
     var pos=getOffset(this);
     _timer1=setTimeout(function(){
-   	    button.setAttribute("style","position:absolute;heigth:20px;width:50px;z-index:2000;top:"+pos.top+"px;left:"+pos.left+"px");
+   	    button.setAttribute("style","position:absolute;height:40px;width:50px;z-index:2000;top:"+pos.top+"px;left:"+pos.left+"px");
     	document.body.appendChild(button);
     	isButtonVisible=1;console.log(isButtonVisible);
     	url1=url2;	
