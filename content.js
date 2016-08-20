@@ -39,13 +39,13 @@ for (var i=0; i<urlList.length; i++){
 function showButton() {
 	clearTimeout(_timer2);
 	clearTimeout(_timer3);
-	if (isButtonVisible===1){
+
+	var url2=this.href;
+	if (isButtonVisible===1 && url1!=url2){
 		button.parentNode.removeChild(button);
 		isButtonVisible=0;console.log(isButtonVisible);
 	}
 
-    var url2=this.href;
-    var rect = this.getBoundingClientRect();
 
     var pos=getOffset(this);
     _timer1=setTimeout(function(){
