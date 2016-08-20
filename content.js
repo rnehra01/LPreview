@@ -34,9 +34,10 @@ urlList = document.getElementsByTagName("A");
 for (var i=0; i<urlList.length; i++){
     urlList[i].onmouseover=showButton;
     urlList[i].onmouseout=removeButton;
+    urlList[i].onclick=removeButton1;
 }
 
-function showButton() {
+function showButton() {console.log("Enters showButton");
 	clearTimeout(_timer2);
 	clearTimeout(_timer3);
 
@@ -46,7 +47,7 @@ function showButton() {
 		isButtonVisible=0;console.log(isButtonVisible);
 	}
 
-
+	console.log("Enters showButton2");
     var pos=getOffset(this);
     _timer1=setTimeout(function(){
    	    button.setAttribute("style","position:absolute;height:40px;width:50px;z-index:2000;top:"+pos.top+"px;left:"+pos.left+"px");
@@ -70,6 +71,14 @@ function removeButton(){
     }
 }
 
+function removeButton1(){
+	if (isButtonVisible===1){
+		button.parentNode.removeChild(button);
+    	isButtonVisible=0;console.log(isButtonVisible);
+    	location.reload();
+	}
+}
+
 function getOffset(el) {
   el = el.getBoundingClientRect();
   return {
@@ -77,6 +86,3 @@ function getOffset(el) {
     top: el.top + window.scrollY+el.height
   }
 }
-
-
-
